@@ -1,0 +1,26 @@
+.head_str{
+    text-align: center;
+    font-size:xx-large;
+    font-style: italic;
+}
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  td {
+    border:  1px solid;
+    padding: 5px;
+    text-align: center;
+  }
+  .table_coll{
+    width: 20%;
+    background-color: wheat;
+  }
+  .table_input{
+    width: auto;
+  }
+  .text_input{
+    width: 100%;
+  }
