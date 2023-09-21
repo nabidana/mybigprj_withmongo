@@ -12,10 +12,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.domain.GameProduct;
 import com.example.demo.service.GameService;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
 public class GameRestController {
@@ -37,7 +40,7 @@ public class GameRestController {
         return new ResponseEntity<HashMap<String, Object>>(map, headers, HttpStatus.OK);
     }
 
-    @PutMapping("inputGame")
+    @PutMapping("/inputGame")
     public String insertGame(GameProduct gameProduct) {
         //System.out.println(gameProduct.toString());
         StringBuilder resultMsg = new StringBuilder();

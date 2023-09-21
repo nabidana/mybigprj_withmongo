@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -17,10 +18,10 @@ public class SecurityConfig {
     
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-        return http
+         http
             .httpBasic().disable()
             .cors().disable()
-            .csrf().disable()
+            .csrf(csrf -> csrf.disable())
             .formLogin((formLogin) ->
                  formLogin
                      .usernameParameter("userId")
@@ -30,15 +31,23 @@ public class SecurityConfig {
                      .loginProcessingUrl("/dologin")
                      .defaultSuccessUrl("/")
              )
+             .logout((logout) ->
+                 logout.deleteCookies("remove")
+                     .invalidateHttpSession(false)
+                     .logoutUrl("/logout")
+                     .logoutSuccessUrl("/")
+             )
             .authorizeHttpRequests(request ->
                 request
-                .requestMatchers("/add", "/delete", "useraccount").hasRole("ADMIN")
+                .requestMatchers("/add", "/delete", "/useraccount", "/inputGame").hasRole("ADMIN")
                 .requestMatchers("/buy", "/myitem").hasAnyRole("USER", "ADMIN")
                 .requestMatchers("/**").permitAll()
                 //.anyRequest().authenticated()
                 //.anyRequest().permitAll()
-            )
-            .build();
+            );
+            //.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+
+            return http.build();
     }
 
     @Bean

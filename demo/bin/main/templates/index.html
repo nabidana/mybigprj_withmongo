@@ -20,12 +20,27 @@
         게임 쇼핑몰
       </a>
       <ul>
-        <li><a href="/" style="color:blue;">게임 목록</a></li>
+        <li><a href="/" style="color: blue;">게임 목록</a></li>
         <li><a href="add">게임 등록</a></li>
         <li><a href="#">게임 구매</a></li>
-        <li><a href="#" class="nav_menus" onclick="login()">LOGIN</a></li>
-        <li><a class="nav_menus" href="#" onclick="signup()">회원가입</a></li>
+        <th:block sec:authorize="isAnonymous()">
+          <li><a href="#" class="nav_menus" onclick="login()">LOGIN</a></li>
+          <li><a class="nav_menus" href="#" onclick="signup()">회원가입</a></li>
+        </th:block>
+        <th:block sec:authorize="isAuthenticated()">
+          <li><a href="/logout" class="nav_menus" >LOGOUT</a></li>
+          <li sec:authorize="hasRole('ROLE_USER')">
+            <a href="" class="nav_menus">게임목록</a>
+          </li>
+          <li sec:authorize="hasRole('ROLE_ADMIN')">
+            <a href="/useraccount" class="nav_menus">회원관리</a>
+          </li>
+        </th:block>
       </ul>
+    </div>
+
+    <div class="printusername" sec:authorize="isAuthenticated()">
+      환영합니다. [ <span class="realyname" sec:authentication="name"/> ] 님
     </div>
     
     <img class="hero_header" src="https://store.cloudflare.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016">

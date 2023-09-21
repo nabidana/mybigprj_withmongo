@@ -33,8 +33,13 @@ public class GameController {
         return "securitylogin";
     }
 
-    @RequestMapping(value = "loginfailed")
+    @RequestMapping(value = "/loginfailed")
     public String loginFailPage() throws Exception{
         return "loginfailed";
+    }
+
+    @GetMapping(value = "/useraccount")
+    public String userAccountPage() throws Exception{
+        return "useraccount";
     }
 }

@@ -40,6 +40,14 @@
     color: darkviolet;
     background-color: blanchedalmond;
   }
+
+  .printusername {
+    text-align: center;
+    font-size: 30px;
+  }
+  .printusername .realyname {
+    color: salmon;
+  }
   
   .hero_header{
     height: 450px;
