@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    min-width: 992px;
+    font-family: "Helvetica";
+  }
+  
+  .navbar{
+    height: 80px;
+    padding-left: 30px;
+  }
+  
+  .logo{
+    line-height: 60px;
+    float: left;
+  }
+  
+  .navbar ul{
+    float: right;
+  }
+  
+  .navbar li{
+    list-style-type: none;
+    float: left;
+    margin-right: 30px;
+    line-height: 60px;
+  }
+  
+  .navbar a{
+    text-decoration: none;
+    color: black;
+    font-style: bold;
+    font-size: large;
+  }
+  
+  .navbar .nav_menus {
+    color: darkviolet;
+    background-color: blanchedalmond;
+  }
+
+  .printusername {
+    text-align: center;
+    font-size: 30px;
+  }
+  .printusername .realyname {
+    color: salmon;
+  }
+
+.nodataCart{
+    text-align: center;
+}
+
+.mainz_cls {
+    margin-top: 10px;
+}
+table {
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  th {
+    border:  1px solid;
+    padding: 5px;
+    text-align: center;
+  }
+  td {
+    border:  1px solid;
+    padding: 5px;
+    text-align: center;
+  }
+  .table_img{
+    width: 44.5%;
+    background-color: wheat;
+  }
+  .table_coll{
+    width: auto;
+    background-color: wheat;
+  }
+  .table_content_name{
+    width: 15.5%;
+  }
+  .table_content_category{
+    width: auto;
+  }
+  .table_content_price{
+    width: 9%;
+  }
+  .table_content_delete{
+    width: 15.5%;
+  }
+
+  footer{
+    width: auto;
+    min-height: 70px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 0 8px 0 8px; /* 각각 위 오른쪽 아래 왼쪽 */
+    display: flex;
+    text-align: center;
+    flex-direction: column; /* 요소들을 수평정렬 */
+  }
+  .paging {
+    list-style: none;
+  }
+  .paging button {
+    padding: 8px 18px;
+    font-size: 14px;
+    background-color: aquamarine;
+  }
+
+.buy_btn{
+    width: 15%;
+    height: 48px;
+    box-sizing: border-box;
+    background-color: seagreen;
+    color: aliceblue;
+}
+
+.btn_back{
+    width: 10%;
+    height: 48px;
+    box-sizing: border-box;
+    background-color: yellow;
+}
+
+.btn_warn{
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  background-color: red;
+}
+
+.count_num{
+  font-size: x-large;
+  margin-right: 50px;
+  text-align: right;
+}
